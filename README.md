@@ -52,10 +52,52 @@ Para el procesamiento asíncrono de mensajes usare AWS MSK que proporciona el se
 ### Proceso
 1. Utilizo MSK de AWS
 
-   - Creo un Cluster en MSK AWS
+   - Creo un Cluster
    - Veo la informacion del Cliente 
    - Guardo el punto de enlace privado (PEP)
-2. Programo en kafka en Java
+2. Utilizo EC2 de AWS
+
+   1. Creo una Instancia y me conecto
+  
+   2. Instalo docker
+   ```
+   sudo yum update
+
+   sudo yum search docker
+
+   sudo yum info docker
+
+   sudo yum install docker
+
+   sudo usermod -a -G docker ec2-user
+   ```
+   3. Instalo Java
+   ```
+   sudo amazon-linux-extras enable corretto8
+
+   sudo yum install java-1.8.0-amazon-corretto
+
+   sudo yum install java-1.8.0-amazon-corretto-devel
+
+   java -version
+   ```
+   4. Agrego en una Imgen el Microservicio
+   ```
+   wget https://docker-notify.s3.eu-west-3.amazonaws.com/"NameJavaFile".zip && unzip "NameJavaFile".zip 
+
+   Limpio y entro: rm -rf customers.zip && cd "NameJavaFile"/
+
+   Super Usuario: sudo su
+
+   Creo una Imagen: docker build -t "NameImageDocker"
+
+   Veo las imagenes: docker images
+
+   Corro la imagen:  docker run -it -p "PortSrv":"PortDocker" "NameImageDocker"
+
+   ```
+
+3. Programo en kafka en Java
 
    - Configuro `Application.Properties`
    ```
