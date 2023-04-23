@@ -5,14 +5,77 @@ El proyecto consiste en desarrollar un sistema de autenticación y procesamiento
 
 
 ## Arquitectura
-### Estructura de Archivos en MICROSERVICIOS JAVA:
-1. Autenticación
-Lo utiliza como **_producer_** luego de que el usuario se logearse satisfactoriamente utilizando JWT para verificar el acceso.
+### Estructura de MICROSERVICIOS:
+1. **Servicio de Autenticación**
+```
+├── config
+│   ├── SwaggerConfig.java
+│   ├── KafkaProducerConfig.java
+│   └── KafkaConsumerConfig.java
+├── controler
+│   └── AuthController.java
+├── entity
+│   ├── Role.java
+│   └── User.java
+├── repository
+│   ├── RoleRepository.java
+│   └── UserRepository.java
+├── security
+│   ├── config
+│   │   └── SecurityConfig.java
+│   ├── jwt
+│   │   ├── JetAuthEntryPoint.java
+│   │   ├── JwtRequestFilter.java
+│   │   └── JwtTokenUtil.java
+│   ├── payload
+│   │   ├── JwtResponse.java
+│   │   ├── LoginRequest.java
+│   │   ├── MessageResponse.java
+│   │   └── RegisterRequest.java
+│   └── service
+│       └── UserDetailsServiceImpl.java
+├── service
+│   ├── impl
+│   │   ├── RoleServiceImpl.java
+│   │   └── UserServiceImpl.java
+│   ├── AuthService.java
+│   ├── RoleService.java
+│   └── UserService.java
+── test
+    └── controllers
+       └── AuthControllerTest.java
 
-2. Publicacion de Mensajes
-Lo utilizo como **_consumer_** para que el usuario prosiga con la publicacion de en la web utilizando JWT para verificar el acceso.
+
+```
+2. **Servicio de Gestion de Mensajes en el Foro**
+
+```
+├── config
+│   ├── SwaggerConfig.java
+│   ├── KafkaProducerConfig.java
+│   └── KafkaConsumerConfig.java
+├── controler
+│   └── MessageController.java
+├── dto
+│   └── MessageRequest.java
+├── entity
+│   ├── Message.java
+│   └── User.java
+├── repository
+│   ├── MessageRepository.java
+│   └── UserRepository.java
+├── service
+│   ├── impl
+│   │   ├── MessageServiceImpl.java
+│   │   └── UserServiceImpl.java
+│   ├── MessageService.java
+│   └── UserService.java
+── test
+    └── controllers
+       └── MessageController.java
 
 
+```
 
 ### Arquitectura de AWS: 
 
