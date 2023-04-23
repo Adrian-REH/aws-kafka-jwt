@@ -22,18 +22,16 @@ El proyecto consiste en desarrollar un sistema de autenticación y procesamiento
 │   └── UserRepository.java
 ├── security
 │   ├── config
-│   │   └── SecurityConfig.java
-│   ├── jwt
-│   │   ├── JetAuthEntryPoint.java
-│   │   ├── JwtRequestFilter.java
-│   │   └── JwtTokenUtil.java
-│   ├── payload
-│   │   ├── JwtResponse.java
-│   │   ├── LoginRequest.java
-│   │   ├── MessageResponse.java
-│   │   └── RegisterRequest.java
-│   └── service
-│       └── UserDetailsServiceImpl.java
+│   │   ├── CustomAccessDniedHandler.java
+│   │   ├── JwtAuthenticationFilter.java
+│   │   ├── RestAuthenticationFailureHandler.java
+│   │   ├── TokenProvider.java
+│   │   ├── UnauthorizedEntryPoin.java
+│   │   └── WebSecurityConfig.java
+│   └── payload
+│       ├── JwtResponse.java
+│       ├── LoginRequest.java
+│       └── RegisterRequest.java
 ├── service
 │   ├── impl
 │   │   ├── RoleServiceImpl.java
