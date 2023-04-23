@@ -21,7 +21,6 @@ import java.util.*;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService, UserService {
-
     @Autowired
     private RoleService roleService;
 
@@ -46,6 +45,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         });
         return authorities;
     }
+
 
     public List<User> findAll() {
         List<User> list = new ArrayList<>();
