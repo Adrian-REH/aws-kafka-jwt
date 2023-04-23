@@ -107,6 +107,7 @@ Utilizare Junit
 * Spring Data JPA
 * Spring PostgreSql
 * Spring Kafka
+* Lombok
 * Jwt
 ```
 ```
