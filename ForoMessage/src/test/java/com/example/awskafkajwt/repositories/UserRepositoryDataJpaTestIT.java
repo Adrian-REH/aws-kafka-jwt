@@ -87,8 +87,6 @@ public class UserRepositoryDataJpaTestIT {
         roleSet.add(role);
 
 
-        user.setApellido("Herrera");
-        user.setNombre("Adrian Elias");
         user.setUsername("Adrian");
         user.setEmail("adrian@gmail.com");
         user.setPassword("dexter");

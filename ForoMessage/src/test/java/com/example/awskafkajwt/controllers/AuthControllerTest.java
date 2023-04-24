@@ -77,8 +77,6 @@ class AuthControllerTest {
 
     @Test
     void whenRegisterUser_thenReturnMessageResponse() {
-        registerRequest.setNombre("adrian");
-        registerRequest.setApellido("herrera");
         registerRequest.setUsername("adm");//Se guarda en el servidor por ende hay que tener cuidado
         registerRequest.setEmail("adr@gmail.com");
         registerRequest.setPassword("1234");
@@ -96,8 +94,6 @@ class AuthControllerTest {
     
     @Test
     void whenRegisterAdmin_thenReturnMessageResponse() {
-        registerRequest.setNombre("adrian");
-        registerRequest.setApellido("herrera");
         registerRequest.setUsername("adm");//Se guarda en el servidor por ende hay que tener cuidado
         registerRequest.setEmail("adr@admin.es");
         registerRequest.setPassword("1234");
@@ -129,8 +125,6 @@ class AuthControllerTest {
 
     @Test
     void whenRegisterRequestParmNull_thenReturnMessageResponseISE() {
-        registerRequest.setNombre(null);
-        registerRequest.setApellido("");
         registerRequest.setUsername(null);
         registerRequest.setEmail(null);
         registerRequest.setPassword(null);
@@ -148,8 +142,6 @@ class AuthControllerTest {
     
     @Test
     void whenRegisterRequestParmIsBlank_thenReturnMessageResponseISE() {
-        registerRequest.setNombre("");
-        registerRequest.setApellido("");
         registerRequest.setUsername("");
         registerRequest.setEmail("");
         registerRequest.setPassword("");
@@ -167,8 +159,6 @@ class AuthControllerTest {
 
     @Test
     void whenRegisterUsernameExist_thenReturnMessageResponseUsernameExist() {
-        registerRequest.setNombre(null);
-        registerRequest.setApellido(null);
         registerRequest.setUsername("adrian");
         registerRequest.setEmail("@");
         registerRequest.setPassword("1234");
@@ -185,8 +175,6 @@ class AuthControllerTest {
     
     @Test
     void whenRegisterEmailExist_thenReturnMessageResponseEmailExist() {
-        registerRequest.setNombre(null);
-        registerRequest.setApellido(null);
         registerRequest.setUsername("dex");
         registerRequest.setEmail("adrian@gmail.com");
         registerRequest.setPassword("1234");
