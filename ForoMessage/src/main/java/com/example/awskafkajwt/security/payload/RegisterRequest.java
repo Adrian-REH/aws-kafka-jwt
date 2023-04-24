@@ -9,8 +9,6 @@ import com.example.awskafkajwt.entity.User;
 public class RegisterRequest {
 
     private String username;
-    private String Nombre;
-    private String Apellido;
     private String email;
     private String password;
 
@@ -38,29 +36,12 @@ public class RegisterRequest {
         this.password = password;
     }
 
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
-    }
-
-    public String getApellido() {
-        return Apellido;
-    }
-
-    public void setApellido(String apellido) {
-        Apellido = apellido;
-    }
 
     public User getRegisterFromDto(){
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
         user.setEmail(email);
-        user.setNombre(Nombre);
-        user.setApellido(Apellido);
 
         return user;
     }
@@ -68,8 +49,6 @@ public class RegisterRequest {
     public String toString() {
         return "RegisterRequest{" +
                 "username='" + username + '\'' +
-                ", Nombre='" + Nombre + '\'' +
-                ", Apellido='" + Apellido + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
